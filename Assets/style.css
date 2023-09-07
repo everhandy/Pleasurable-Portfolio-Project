@@ -1,0 +1,165 @@
+/* Universal Selection - declaring all my variable color codes, establishing font family, the webpage's background color, and removing the bullet point icon from all unordered lists */
+
+:root {
+    --blue1: #91BAD6;
+    --blue2: #528AAE;
+    --blue3: #BCD2E8;
+    --gray:  #EEEEEE;
+    --white: aliceblue;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--gray);
+}
+
+ul {
+    list-style-type: none;
+}
+
+h1, h2 {
+    text-decoration: underline;
+    margin-right: 2rem;
+}
+
+/* Header Section - Used flexbox rules including flex-direction for the title-card section of my picture and name. I also used the flex-grow on h1 to make it dynamically grow*/
+
+h1  {
+    text-align: center;
+    flex-grow: 1;
+}
+
+#profile-pic {
+      max-width: 12.5%;
+      max-height: 12.5%;    
+}
+
+#title-card {
+    display: flex;
+    flex-direction: row;
+    background-color: var(--blue1);
+    align-items: center;
+    color: var(--white);
+}
+
+/* Navigation bar Section - used flex row and flex-end to offset the row of navigation buttons to the left and added a 2 rem margin to the right for spacing. */
+
+nav {
+    background-color: var(--blue2);
+    color: var(--white);
+}
+
+.nav-bar-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;    
+}
+
+.nav-bar-list li {
+    margin-right: 2rem;
+}
+
+.nav-bar-list li a{
+    color: var(--white);
+}
+
+/* About Me Section - I used the flex-direction row for this section to match the My Work section*/
+
+#about-me {
+    border: thick solid var(--blue2);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+/* My Work Section - used matching flex-direction and margin-bottom to match About Me section. I made the images for project 1 and 2 slightly larger than the work in progress image to follow the acceptance criteria.  This section uses a flex-wrap to be dynamic and wrap the project sections as the screen size changes.*/
+
+#my-work {
+    border: thick solid var(--blue2);
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 1rem;
+}
+
+#my-work ul {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1 1 auto;
+}
+
+#my-work ul li {
+    display: flex;
+    flex-direction: column;
+    border: thick solid var(--blue2);
+    flex-grow: 1;
+    background-color: var(--blue3);
+    justify-content: center;
+    align-items: center;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+}
+
+.work-img {
+    object-fit: fill;
+    margin-bottom: 1rem;
+    max-width: 612px;
+    max-height: 336px;
+}
+
+#js-img, #api-img {
+    max-width: 500px;
+    max-height: 250px;
+}
+
+
+h3{
+    padding: auto;
+    text-align: center;
+}
+
+/* Footer-Contact Me Section  - used a flex row similar to the last two sections */
+
+footer {
+    background-color: var(--blue2);
+    color: var(--white);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+footer ul li a {
+    color: var(--white);
+}
+
+/* media screen changes adjustments - first focusing on smaller screen sizes. I made it so the images stop display past certain breakpoints and the flex rows turn into columns to be more aesthetically pleasing. Lastly, I focused on the title card section for larger screens to make sure my name and picture looked better on larger screens.*/
+
+@media screen and (max-width: 797px) {
+    .work-img {display: none;};
+}
+
+@media screen and (max-width: 495px) {
+    #profile-pic {display: none;};
+}
+
+@media screen and (max-width: 390px) {
+    #my-work, #about-me, footer {
+        display: flex;
+        flex-direction: column;};
+    footer {font-size: 50%;};
+}
+
+@media screen and (max-width: 285px) {
+    .nav-bar-list {
+        display: flex;
+        flex-direction: column;};
+}
+
+@media screen and (min-width: 1300px) {
+    h1 {font-size: 3em};
+    #profile-pic {
+        max-width: 18%;
+        max-height: 18%;};
+}
+
+@media screen and (min-width: 1800px) {
+    h1 {font-size: 6em};
+}
